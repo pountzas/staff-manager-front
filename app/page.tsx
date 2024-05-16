@@ -1,5 +1,5 @@
-import { BusinessList } from "../components/BusinessList";
-import { IoIosAddCircle } from "react-icons/io";
+import Add from "@/components/Add";
+import { BusinessList } from "@/components/BusinessList";
 
 export default async function BusinessesPage() {
   return (
@@ -7,9 +7,7 @@ export default async function BusinessesPage() {
       <h1 className="text-lg font-semibold text-slate-800 pt-8 pb-4">
         Business Manager
       </h1>
-      <button className="text-3xl text-slate-800 pb-4">
-        <IoIosAddCircle />
-      </button>
+      <Add business={true} />
       <BusinessList />
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { NextRouter, useRouter } from "next/router";
 import React from "react";
 import { MdDelete } from "react-icons/md";
 
@@ -9,6 +10,12 @@ type Props = {
 };
 
 export const DeleteButton = ({ businessId, staffId }: Props) => {
+  // let router: NextRouter;
+  // function routerTest() {
+  //   "use server";
+  //   router = useRouter();
+  //   throw new Error("Function not implemented.");
+  // }
   const handleDelete = async () => {
     if (businessId) {
       const res = await fetch(
@@ -29,11 +36,13 @@ export const DeleteButton = ({ businessId, staffId }: Props) => {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
     }
+    // routerTest();
+    // router.reload();
   };
 
   return (
-    <Link href={`/`} onClick={handleDelete} className="cursor-pointer pr-2">
+    <div onClick={handleDelete} className="cursor-pointer pr-2">
       <MdDelete />
-    </Link>
+    </div>
   );
 };
