@@ -51,6 +51,9 @@ export function AddButtonModal({ business = false, businessId }: Props) {
       console.log(data);
     }
     setShowModal(false);
+    setTimeout(() => {
+      window.location.reload();
+    }, 4000);
   };
 
   return (

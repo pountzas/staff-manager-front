@@ -10,12 +10,6 @@ type Props = {
 };
 
 export const DeleteButton = ({ businessId, staffId }: Props) => {
-  // let router: NextRouter;
-  // function routerTest() {
-  //   "use server";
-  //   router = useRouter();
-  //   throw new Error("Function not implemented.");
-  // }
   const handleDelete = async () => {
     if (businessId) {
       const res = await fetch(
@@ -36,8 +30,9 @@ export const DeleteButton = ({ businessId, staffId }: Props) => {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
     }
-    // routerTest();
-    // router.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 4000);
   };
 
   return (
